@@ -6,10 +6,7 @@ import { CreatePokemonDto } from './create-pokemon.dto';
 
 @Injectable()
 export class PokemonService {
-    constructor(
-        @InjectRepository(PokemonEntity)
-        private readonly PokemonRepository: Repository<PokemonEntity>,
-    ) {}
+    constructor(@InjectRepository(PokemonEntity) private readonly PokemonRepository: Repository<PokemonEntity>) {}
 
     async createPokemon(data: CreatePokemonDto): Promise<PokemonEntity> {
         const pokemon = new PokemonEntity();
